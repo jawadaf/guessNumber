@@ -6,6 +6,8 @@ function generateNumber() {
     rannum = Math.trunc(Math.random()*20) + 1;
 }
 
+let highScore = 0
+
 function guessNumber() {
     const guess = Number(inpGuess.value)
     if (guess === rannum) {
@@ -13,6 +15,10 @@ function guessNumber() {
         lblMessage.textContent = "DU HAR VUNDET! Tryk 'Again', for at prøve igen."
         lblNumber.textContent = rannum
         pbGuess.disabled = true
+        if (score > highScore) {
+            highScore = score;
+            lblHighScore.textContent = highScore;
+        }
     }
     if (guess < 1 || guess > 20) {
         lblMessage.textContent = "Tallet findes ikke. Prøv igen."
@@ -66,12 +72,15 @@ const lblNumber = document.querySelector(".number");
 const lblScore = document.querySelector(".score");
 //console.log(lblScore);
 
+const lblHighScore = document.querySelector(".highscore")
+
 const inpGuess = document.querySelector(".guess");
 //console.log(inpGuess);
 
 const pbGuess = document.querySelector(".check")
 
 const pbAgain = document.querySelector(".again")
+
 pbAgain.addEventListener("click", generateNumber)
 //console.log(pbAgain)
 
