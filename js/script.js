@@ -22,7 +22,6 @@ function guessNumber() {
     }
     if (guess < 1 || guess > 20) {
         lblMessage.textContent = "Tallet findes ikke. Prøv igen."
-        return
     }
 }
 
