@@ -20,9 +20,6 @@ function guessNumber() {
             lblHighScore.textContent = highScore;
         }
     }
-    if (guess < 1 || guess > 20) {
-        lblMessage.textContent = "Tallet findes ikke. Prøv igen."
-    }
 }
 
 let score = 20
@@ -39,6 +36,7 @@ function ifWrong() {
     }
     if (guess < 1 || guess > 20) {
         lblMessage.textContent = "Tallet findes ikke. Prøv igen."
+        document.body.style.backgroundColor = "#222"
         return
     }
     score--
