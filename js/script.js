@@ -1,12 +1,12 @@
 console.log("jeg er i guessNumber")
 
 let rannum = 0;
+let highScore = 0
+let score = 20
 
 function generateNumber() {
     rannum = Math.trunc(Math.random()*20) + 1;
 }
-
-let highScore = 0
 
 function guessNumber() {
     const guess = Number(inpGuess.value)
@@ -15,14 +15,16 @@ function guessNumber() {
         lblMessage.textContent = "DU HAR VUNDET! Tryk 'Again', for at prøve igen."
         lblNumber.textContent = rannum
         pbGuess.disabled = true
-        if (score > highScore) {
-            highScore = score;
-            lblHighScore.textContent = highScore;
-        }
+        letHighScore()
     }
 }
 
-let score = 20
+function letHighScore() {
+    if (score > highScore) {
+        highScore = score;
+        lblHighScore.textContent = highScore;
+    }
+}
 
 function ifWrong() {
     const guess = Number(inpGuess.value)
@@ -39,6 +41,10 @@ function ifWrong() {
         document.body.style.backgroundColor = "#222"
         return
     }
+    letScore()
+}
+
+function letScore() {
     score--
     lblScore.textContent = score
     if (score <= 0) {
