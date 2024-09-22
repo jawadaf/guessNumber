@@ -66,26 +66,20 @@ function resetGame() {
 }
 
 const lblMessage = document.querySelector(".message");
-//console.log(lblMessage);
-//console.log(lblMessage.textContent)
 
 const lblNumber = document.querySelector(".number");
-//console.log(lblNumber);
 
 const lblScore = document.querySelector(".score");
-//console.log(lblScore);
 
 const lblHighScore = document.querySelector(".highscore")
 
 const inpGuess = document.querySelector(".guess");
-//console.log(inpGuess);
 
 const pbGuess = document.querySelector(".check")
 
 const pbAgain = document.querySelector(".again")
 
 pbAgain.addEventListener("click", generateNumber)
-//console.log(pbAgain)
 
 pbGuess.addEventListener("click", guessNumber)
 
